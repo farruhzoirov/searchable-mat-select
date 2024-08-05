@@ -1,0 +1,45 @@
+.search-container {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 20;
+}
+
+.search-container input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mat-select-panel {
+  max-height: 400px;
+  overflow: auto;
+}
+
+.searchable-field {
+  position: relative;
+  padding: 0;
+}
+
+.searchable-field input {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  margin: 0;
+}
+
+
+.searchable-field span {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgb(0, 0, 0);
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+
+.searchable-field[disabled] {
+  pointer-events: auto;
+}

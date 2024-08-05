@@ -1,0 +1,25 @@
+<mat-form-field appearance="fill">
+
+  <mat-label>Mamlakat</mat-label>
+  <mat-select [(value)]="selectedCountry">
+    <mat-option class="searchable-field search-container" aria-selected="false" aria-disabled="false" disabled>
+      <div >
+        <input matInput [formControl]="searchControl" (input)="onSearch()" placeholder="Search options">
+        @if (isInputEmpty()) {
+          <span>Qidirish</span>
+        }
+      </div>
+    </mat-option>
+    @for (option of filteredOptions; track option) {
+      @if (option.value === 1) {
+        <mat-option class="selectable-option" [value]="option.value" aria-selected="true">
+          {{ option.viewValue }}
+        </mat-option>
+      } @else {
+        <mat-option class="selectable-option" [value]="option.value" aria-selected="false">
+          {{ option.viewValue }}
+        </mat-option>
+      }
+    }
+  </mat-select>
+</mat-form-field>
